@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhosh Arunagiri | Sports Data Scientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav>
+        <div class="logo">SA<span class="accent">99</span></div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">Data Science × Cricket</div>
+            <h1>Santhosh <br><span class="outlined-text">Arunagiri</span></h1>
+            <p class="role-text">I am a <span class="typing-text"></span></p>
+            <p class="hero-desc">Bridging the gap between the dugout and the database. Specializing in Deep Learning,
+                Computer Vision, and Sports Analytics.</p>
+            <div class="hero-btns">
+                <a href="#projects" onclick="window.open('http://localhost:8501', '_blank')"
+                    class="btn primary-btn">View Workbench <i class="fas fa-arrow-right"></i></a>
+                <a href="https://www.linkedin.com/in/santhosh-arunagiri/" target="_blank" class="btn secondary-btn"><i
+                        class="fab fa-linkedin"></i> Let's Talk</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <!-- decorative elements -->
+            <div class="stat-card float-1">
+                <div class="stat-icon"><i class="fas fa-database"></i></div>
+                <div class="stat-info">
+                    <span class="stat-value">7M+</span>
+                    <span class="stat-label">Data Points Processed</span>
+                </div>
+            </div>
+            <div class="stat-card float-2">
+                <div class="stat-icon"><i class="fas fa-baseball-ball"></i></div>
+                <div class="stat-info">
+                    <span class="stat-value">ECB</span>
+                    <span class="stat-label">Reg. Player</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <h2>The <span class="accent">Player-Analyst</span> Hybrid</h2>
+            <p>From playing in the Cheshire Lines CC to modeling molecular smells with Deep Learning.</p>
+        </div>
+
+        <div class="bento-grid">
+            <div class="bento-card bio-card">
+                <h3>Bio</h3>
+                <p>Data Scientist with an MSc (Distinction) from the University of Liverpool. I combine rigorous
+                    scientific methodology with practical sports domain knowledge. Uniquely positioned to translate
+                    complex analytics for coaches and players.</p>
+            </div>
+            <div class="bento-card education-card">
+                <h3>Education</h3>
+                <div class="edu-item">
+                    <span class="year">2023</span>
+                    <h4>MSc Data Science & AI</h4>
+                    <p>University of Liverpool (Distinction)</p>
+                </div>
+                <!-- Added based on user context -->
+                <div class="edu-item">
+                    <span class="year">2020</span>
+                    <h4>BSc Chemistry</h4>
+                    <p>Bharathidasan University</p>
+                </div>
+            </div>
+            <div class="bento-card sports-card">
+                <h3>On The Field</h3>
+                <ul class="sports-list">
+                    <li><i class="fas fa-trophy"></i> District Amateur Cricket League Winner</li>
+                    <li><i class="fas fa-user-check"></i> ECB Registered Player</li>
+                    <li><i class="fas fa-certificate"></i> <a href="assets/pfsa_level2.pdf" target="_blank"
+                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--accent);">PFSA
+                            Level 2 Performance Analysis (Football)</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="section-header">
+            <h2>Featured <span class="accent">Work</span></h2>
+        </div>
+
+        <!-- Featured Project 1: CricStat Pro -->
+        <article class="project-card featured">
+            <div class="project-content">
+                <div class="project-label">Flagship Project</div>
+                <h3>CricStat Pro | Sports Analytics Engine</h3>
+                <p class="project-summary">A high-performance analytics platform processing over 7 million data points.
+                    Transforms raw ball-by-ball JSON (IPL, T20I, ODI, Test) into actionable insights with a custom neon
+                    UI.</p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>PostgreSQL</span>
+                    <span>SQLAlchemy</span>
+                    <span>CSS3</span>
+                </div>
+                <div class="project-links">
+                    <a href="http://localhost:8501" target="_blank" class="btn-link">View Analysis <i
+                            class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/santhosharun99" class="btn-link"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+            <div class="project-visual neon-border">
+                <!-- Visual placeholder would go here -->
+                <div class="visual-placeholder">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Win Probability: 87%</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="projects-grid">
+            <!-- Project 2 -->
+            <article class="project-card compact">
+                <div class="card-icon"><i class="fas fa-table-tennis"></i></div>
+                <h3>WTA Tennis Stats & H2H Engine</h3>
+                <p>Comprehensive analytics platform for WTA rankings (2007-2023). Features Selenium-based ranking
+                    scraping, surface-wise performance analysis, and interactive Head-to-Head comparisons via Streamlit.
+                </p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Selenium</span>
+                    <span>Streamlit</span>
+                    <span>Pandas</span>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/santhosharun99/Womens-Tennis-Stats-since-2007" target="_blank"
+                        style="color: var(--accent); text-decoration: none; font-size: 0.9rem;"><i
+                            class="fab fa-github"></i> View Source</a>
+                </div>
+            </article>
+
+            <!-- Project 3: IPL Data Viz -->
+            <article class="project-card compact">
+                <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3>IPL Data Visualisation (2008-2023)</h3>
+                <p>Exploratory Data Analysis (EDA) and visualization of 15 years of IPL data. Includes delivery-level
+                    analysis, stadium normalization, and player performance metrics using Jupyter Notebooks.</p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Jupyter</span>
+                    <span>Pandas</span>
+                    <span>Matplotlib</span>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/santhosharun99/IPL-data-visualisation" target="_blank"
+                        style="color: var(--accent); text-decoration: none; font-size: 0.9rem;"><i
+                            class="fab fa-github"></i> View Source</a>
+                </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card compact">
+                <div class="card-icon"><i class="fas fa-atom"></i></div>
+                <h3>Explaining Molecular Smell (MSc Dissertation)</h3>
+                <p>Multi-modal Deep Learning project (GNNs + CNNs) for odor prediction from molecular & spectral data.
+                    Collaboration with <strong>Cooper Group (Materials Innovation Factory)</strong> at University of
+                    Liverpool.</p>
+                <div class="tech-stack">
+                    <span>TensorFlow</span>
+                    <span>JAX</span>
+                    <span>GNNs</span>
+                    <span>CNNs</span>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/santhosharun99/Explaining-molecular-smell-with-deep-learning"
+                        target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.9rem;"><i
+                            class="fab fa-github"></i> View Source</a>
+                </div>
+            </article>
+
+            <!-- Project 4: Enterprise -->
+            <article class="project-card compact">
+                <div class="card-icon">
+                    <i class="fas fa-industry"></i>
+                    <img src="assets/indian_oil.gif" alt="Indian Oil"
+                        style="height: 24px; vertical-align: middle; margin-left: 10px; border-radius: 4px; background-color: white; padding: 2px;">
+                </div>
+                <h3>IOCL Enterprise NFR System</h3>
+                <p>Full-stack solution for Indian Oil Corporation to digitize non-fuel revenue sales. Bridges Area
+                    Offices with field staff.</p>
+                <div class="tech-stack">
+                    <span>React.js</span>
+                    <span>Node.js</span>
+                    <span>Supabase</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Tech Stack</h3>
+            <div class="skill-tags">
+                <span>Python</span>
+                <span>SQL (Postgres)</span>
+                <span>React.js</span>
+                <span>PyTorch</span>
+                <span>Pandas</span>
+                <span>Git</span>
+                <span>Docker</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3><i class="fas fa-brain"></i> Domain Expertise</h3>
+            <div class="skill-tags">
+                <span>Cricket Strategy</span>
+                <span>Performance Analysis</span>
+                <span>Computer Vision</span>
+                <span>Predictive Modeling</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Ready to draft a <span class="accent">game changer?</span></h2>
+            <p>I am currently based in India and open to Performance Analyst and Data Scientist roles.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/santhosh-arunagiri/" class="social-btn"><i
+                        class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://github.com/santhosharun99" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:santhosharunagiri99@gmail.com" class="social-btn"><i class="fas fa-envelope"></i>
+                    Email</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Santhosh Arunagiri. Built with <i class="fas fa-heart accent"></i> & Code.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
