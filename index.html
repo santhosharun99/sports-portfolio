@@ -4,309 +4,589 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santhosh Arunagiri | Sports Data Scientist</title>
+    <title>Santhosh Arunagiri | AI & ML Data Scientist</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Marked.js for GitHub Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div class="ide-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">EXPLORER</div>
+            <div class="sidebar-project">
+                <i class="fas fa-chevron-down"></i> PORTFOLIO
+                <div class="sidebar-files">
+                    <div class="file active" data-target="#hero-section"><i class="fas fa-user-circle"
+                            style="color: #4B8BBE;"></i> Profile</div>
+                    <div class="file" data-target="#skills-section"><i class="fas fa-tools" style="color: #e74c3c;"></i>
+                        Skills.json</div>
+                    <div class="file" data-target="#education-section"><i class="fas fa-graduation-cap"
+                            style="color: #f39c12;"></i> Education</div>
+                    <div class="file" data-target="#experience-section"><i class="fas fa-briefcase"
+                            style="color: #9b59b6;"></i> Experience.log</div>
+                    <div class="file" data-target="#aiml-section"><i class="fas fa-brain" style="color: #F7DF1E;"></i>
+                        AI/ML Projects</div>
+                    <div class="file" data-target="#sports-section"><i class="fas fa-running"
+                            style="color: #E34F26;"></i> Sports Projects</div>
+                    <div class="file" data-target="#chemistry-section"><i class="fas fa-flask"
+                            style="color: #4CAF50;"></i> Chemistry Projects</div>
+                    <div class="file" data-target="#contact-section"><i class="fas fa-envelope"
+                            style="color: #00f2ff;"></i> Contact.md</div>
+                </div>
+            </div>
+        </aside>
 
-    <nav>
-        <div class="logo">SA<span class="accent">99</span></div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+        <!-- Main Editor Area -->
+        <main class="editor">
+            <!-- Tabs -->
+            <div class="editor-tabs">
+                <div class="tab active"><i class="fab fa-python" style="color: #4B8BBE;"></i> main.py <span
+                        style="margin-left: 8px;">×</span></div>
+                <div class="tab-spacer"></div>
+                <button id="theme-toggle" title="Toggle Light/Dark Mode"
+                    style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 0 15px; font-size: 1.2rem; transition: color 0.3s;"><i
+                        class="fas fa-sun"></i></button>
+            </div>
 
-    <header class="hero">
-        <div class="hero-content">
-            <div class="badge">Data Science × Cricket</div>
-            <h1>Santhosh <br><span class="outlined-text">Arunagiri</span></h1>
-            <p class="role-text">I am a <span class="typing-text"></span></p>
-            <p class="hero-desc">Bridging the gap between the dugout and the database. Specializing in Deep Learning,
-                Computer Vision, and Sports Analytics.</p>
-            <div class="hero-btns">
-                <a href="#projects" onclick="window.open('github.com/santhosharun99', '_blank')"
-                    class="btn primary-btn">View Workbench <i class="fas fa-arrow-right"></i></a>
-                <a href="https://www.linkedin.com/in/santhosh-arunagiri/" target="_blank" class="btn secondary-btn"><i
-                        class="fab fa-linkedin"></i> Let's Talk</a>
+            <!-- Code Area / Sections -->
+            <div class="editor-content">
+                <div class="code-container">
+                    <!-- Line Numbers -->
+                    <div class="line-numbers"></div>
+
+                    <div class="code-view">
+                        <!-- HERO SECTION -->
+                        <div class="section" id="hero-section">
+                            <div class="code-block" style="margin-top: 10px;">
+                                <pre><code><span class="keyword">class</span> <span class="class">DataScientist</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>):
+        <span class="keyword">self</span>.name = <span class="string">"Santhosh Arunagiri"</span>
+        <span class="keyword">self</span>.roles = [<span class="string">"AI Researcher"</span>, <span class="string">"ML Engineer"</span>, <span class="string">"Data Scientist"</span>]
+        <span class="keyword">self</span>.specialty = <span class="string">"Deep Learning & Computer Vision"</span>
+        <span class="keyword">self</span>.status = <span class="string">"Ready to deploy scalable intelligence"</span>
+
+<span class="comment"># Initialize Environment</span>
+user = DataScientist()
+<span class="builtin">print</span>(<span class="string">f"Loading profile for </span><span class="keyword">{</span>user.name<span class="keyword">}</span><span class="string">..."</span>)</code></pre>
+                            </div>
+                            <div class="content-reveal hero-reveal">
+                                <p
+                                    style="color: #00f2ff; font-family: var(--font-mono); font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px;">
+                                    Welcome to my portfolio! I'm</p>
+                                <h1 class="glitch" data-text="SANTHOSH ARUNAGIRI"
+                                    style="font-size: 3.5rem; margin-bottom: 10px;">SANTHOSH ARUNAGIRI</h1>
+                                <p class="subtitle" style="font-size: 1.5rem;">AI & ML Data Scientist</p>
+                                <div class="tech-stack-hero">
+                                    <span>Python</span>
+                                    <span>PyTorch</span>
+                                    <span>TensorFlow</span>
+                                    <span>SQL</span>
+                                    <span>Cloud</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPACING -->
+                        <div class="spacer-section"></div>
+
+                        <!-- SECTION: SKILLS -->
+                        <div class="section" id="skills-section">
+                            <div class="code-block anim-type-0" style="font-family: var(--font-mono);">
+                                <span class="keyword">import</span> <span class="variable">competencies</span><br>
+                                <span class="keyword">print</span>(<span
+                                    class="function">competencies.get_skills</span>())
+                            </div>
+                            <div class="content-reveal">
+                                <h2 class="section-title">Technical & Non-Technical Skills</h2>
+                                <div class="projects-grid">
+                                    <div class="project-card" style="border-left-color: #e74c3c; cursor: default;"
+                                        onclick="event.stopPropagation()">
+                                        <h3 style="color: var(--text-primary); font-size: 1.3rem;"><i
+                                                class="fas fa-laptop-code" style="color:#e74c3c"></i> Technical Skills
+                                        </h3>
+                                        <ul
+                                            style="color: var(--text-primary); margin-left: 20px; line-height: 1.8; margin-top: 15px;">
+                                            <li><b>Languages & Tools:</b> Python, SQL, PostgreSQL, JAX, TensorFlow, Git.
+                                            </li>
+                                            <li><b>AI & ML:</b> Predictive Modeling, RLHF, Prompt Engineering, Graph
+                                                Neural Networks (GNNs), Monte Carlo Simulations.</li>
+                                            <li><b>Data & Analytics:</b> Exploratory Data Analysis, XGBoost, Selenium,
+                                                Matplotlib, Streamlit.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="project-card" style="border-left-color: #3498db; cursor: default;"
+                                        onclick="event.stopPropagation()">
+                                        <h3 style="color: var(--text-primary); font-size: 1.3rem;"><i
+                                                class="fas fa-users" style="color:#3498db"></i> Non-Technical Skills
+                                        </h3>
+                                        <ul
+                                            style="color: var(--text-primary); margin-left: 20px; line-height: 1.8; margin-top: 15px;">
+                                            <li><b>Leadership & Management:</b> Project Ownership, Functional
+                                                Communication, Product Architecture.</li>
+                                            <li><b>Analytical Thinking:</b> Complex Reasoning Evaluation, System
+                                                Logistics, Problem Solving.</li>
+                                            <li><b>Operational:</b> Process Automation, Regulatory Compliance, Domain
+                                                Strategy Structuring.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPACING -->
+                        <div class="spacer-section"></div>
+
+                        <!-- SECTION: EDUCATION -->
+                        <div class="section" id="education-section">
+                            <div class="code-block anim-type-1" style="font-family: var(--font-mono);">
+                                <span class="keyword">with</span> <span class="function">open</span>(<span
+                                    class="string">'academic_record.json'</span>) <span class="keyword">as</span> file:
+                                <span class="function">load_credentials</span>(degree=<span
+                                    class="string">"MSc_Data_Science_AI"</span>)
+                            </div>
+                            <div class="content-reveal">
+                                <h2 class="section-title">Education</h2>
+                                <div class="projects-grid">
+                                    <div class="project-card" style="border-left-color: #f39c12; cursor: default;"
+                                        onclick="event.stopPropagation()">
+                                        <h3 style="color: var(--text-primary); font-size: 1.3rem;">MSc Data Science and
+                                            Artificial
+                                            Intelligence</h3>
+                                        <p
+                                            style="color: #f39c12; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem;">
+                                            University of Liverpool</p>
+                                        <p
+                                            style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.95rem;">
+                                            September 2022 – December 2023</p>
+                                        <div class="tags" style="margin-top:15px;">
+                                            <span
+                                                style="background: rgba(243, 156, 18, 0.1); border-color: #f39c12; color: #f39c12; font-weight:bold;"><i
+                                                    class="fas fa-award"></i> Distinction</span>
+                                            <span>Artificial Intelligence</span><span>Machine Learning</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" style="border-left-color: #4CAF50; cursor: default;"
+                                        onclick="event.stopPropagation()">
+                                        <h3 style="color: var(--text-primary); font-size: 1.3rem;">BSc Chemistry</h3>
+                                        <p
+                                            style="color: #4CAF50; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem;">
+                                            Bishop Heber College (Bharathidasan University)</p>
+                                        <p
+                                            style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.95rem;">
+                                            June 2017 – April 2020</p>
+                                        <div class="tags" style="margin-top:15px;">
+                                            <span>Chemistry</span><span>Science</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPACING -->
+                        <div class="spacer-section"></div>
+
+                        <!-- SECTION: EXPERIENCE -->
+                        <div class="section" id="experience-section">
+                            <div class="code-block anim-type-2" style="font-family: var(--font-mono);">
+                                <span class="keyword">for</span> <span class="variable">job</span> <span
+                                    class="keyword">in</span> <span class="function">get_career_history</span>():
+                                <span class="function">render</span>(job.role, job.company)
+                            </div>
+                            <div class="content-reveal">
+                                <h2 class="section-title">Work Experience</h2>
+                                <div class="projects-grid">
+                                    <div class="project-card"
+                                        style="border-left-color: #9b59b6; cursor: default; grid-column: 1 / -1;"
+                                        onclick="event.stopPropagation()">
+                                        <h3 style="color: var(--text-primary); font-size: 1.3rem;">Data & AI Solutions
+                                            Consultant
+                                            (Contract)</h3>
+                                        <p
+                                            style="color: #9b59b6; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem;">
+                                            Indian Oil Corporation Ltd (IOCL)</p>
+                                        <p
+                                            style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 15px;">
+                                            2026 – Current</p>
+                                        <ul style="color: var(--text-primary); margin-left: 20px; line-height: 1.6;">
+                                            <li style="margin-bottom: 8px;"><b>Project Leadership:</b> Architected and
+                                                deployed a full-stack predictive analytics platform digitizing sales
+                                                operations for the ND cylinders and NFR divisions.</li>
+                                            <li style="margin-bottom: 8px;"><b>Predictive Modeling:</b> Integrated
+                                                Machine Learning models to analyze high-velocity sales data, providing
+                                                divisional managers with actionable demand forecasts.</li>
+                                            <li style="margin-bottom: 8px;"><b>Systems Integrity:</b> Engineered a
+                                                real-time inventory management system with transactional consistency,
+                                                supporting hundreds of concurrent users and ensuring data reliability.
+                                            </li>
+                                            <li><b>Platform Ownership:</b> Currently managing end-to-end maintenance,
+                                                site reliability, and iterative feature deployment for the enterprise
+                                                solution.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="project-card"
+                                        style="border-left-color: #3498db; cursor: default; grid-column: 1 / -1;"
+                                        onclick="event.stopPropagation()">
+                                        <h3 style="color: var(--text-primary); font-size: 1.3rem;">AI Content Engineer –
+                                            Oracle
+                                            Contributor (Freelance)</h3>
+                                        <p
+                                            style="color: #3498db; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem;">
+                                            Outlier.ai</p>
+                                        <p
+                                            style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 15px;">
+                                            2023 – Current</p>
+                                        <ul style="color: var(--text-primary); margin-left: 20px; line-height: 1.6;">
+                                            <li style="margin-bottom: 8px;"><b>LLM Optimization:</b> Performing
+                                                high-level Reinforcement Learning from Human Feedback (RLHF) to
+                                                fine-tune Large Language Models (LLMs) for technical accuracy and
+                                                logical reasoning.</li>
+                                            <li style="margin-bottom: 8px;"><b>Technical Evaluation:</b> Auditing
+                                                model-generated code (Python) and complex reasoning chains to ensure
+                                                adherence to strict safety and performance constraints.</li>
+                                            <li><b>Prompt Engineering:</b> Developing and testing complex multi-turn
+                                                prompts to evaluate model capabilities in RAG architectures and agentic
+                                                AI concepts.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="project-card"
+                                        style="border-left-color: #2ecc71; cursor: default; grid-column: 1 / -1;"
+                                        onclick="event.stopPropagation()">
+                                        <h3 style="color: var(--text-primary); font-size: 1.3rem;">Accounts Receivables
+                                            Associate</h3>
+                                        <p
+                                            style="color: #2ecc71; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem;">
+                                            Omega Healthcare Management Services</p>
+                                        <p
+                                            style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 5px;">
+                                            April 2022 - Aug 2022</p>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;"><i
+                                                class="fas fa-map-marker-alt"></i> Tiruchirappalli, Tamil Nadu, India
+                                            (On-site)</p>
+                                        <ul style="color: var(--text-primary); margin-left: 20px; line-height: 1.6;">
+                                            <li style="margin-bottom: 8px;">Boosted efficiency through optimising
+                                                payment and billing processes using data analysis techniques.</li>
+                                            <li style="margin-bottom: 8px;">Ensured compliance and adherence to
+                                                financial regulations and company policies.</li>
+                                            <li>Analysed healthcare claims and payments for a group of US medical
+                                                providers with various insurance companies.</li>
+                                        </ul>
+                                        <div class="tags" style="margin-top: 15px;">
+                                            <span>Project Management</span><span>Accounts</span><span>Data
+                                                Analysis</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="project-card"
+                                        style="border-left-color: #e67e22; cursor: default; grid-column: 1 / -1;"
+                                        onclick="event.stopPropagation()">
+                                        <h3 style="color: var(--text-primary); font-size: 1.3rem;">Intern</h3>
+                                        <p
+                                            style="color: #e67e22; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem;">
+                                            Tamil Nadu Newsprint And Papers Limited (TNPL)</p>
+                                        <p
+                                            style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.95rem; margin-bottom: 5px;">
+                                            Feb 2019</p>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;"><i
+                                                class="fas fa-map-marker-alt"></i> Tamil Nadu, India (On-site)</p>
+                                        <ul style="color: var(--text-primary); margin-left: 20px; line-height: 1.6;">
+                                            <li>Completed a 1-month comprehensive internship program at the paper
+                                                manufacturing plant.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPACING -->
+                        <div class="spacer-section"></div>
+
+                        <!-- SECTION 1: AI / ML / DATA SCIENCE -->
+                        <div class="section" id="aiml-section">
+                            <div class="code-block anim-type-3" style="font-family: var(--font-mono);">
+                                <span class="keyword">await</span> <span
+                                    class="function">load_projects</span>(category=<span
+                                    class="string">"AI_ML_DataScience"</span>)
+                            </div>
+                            <div class="content-reveal">
+                                <h2 class="section-title">AI, ML & Data Science Projects</h2>
+                                <div class="projects-grid">
+                                    <div class="project-card" data-repo="santhosharun99/CricStat-Pro-Engine">
+                                        <h3>CricStat Pro Engine</h3>
+                                        <p>High-performance analytics platform processing 7M+ data points. Custom neon
+                                            UI with deep statistical engine.</p>
+                                        <div class="tags">
+                                            <span>Python</span><span>PostgreSQL</span><span>SQLAlchemy</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" data-repo="santhosharun99/The_Oracle_F1_Strategy">
+                                        <h3>The Oracle | F1 AI</h3>
+                                        <p>Bayesian Race Strategy Optimization Engine. Ingests real-time telemetry to
+                                            predict pit strategies using Monte Carlo simulations.</p>
+                                        <div class="tags"><span>Streamlit</span><span>XGBoost</span><span>Monte
+                                                Carlo</span></div>
+                                    </div>
+                                    <div class="project-card" data-repo="santhosharun99/Ind_Vs_Nz_ODI_Analytics">
+                                        <h3>IND vs NZ Analytics</h3>
+                                        <p>Interactive dashboard featuring pitch maps and granular matchup analysis
+                                            (Hotspots) algorithms.</p>
+                                        <div class="tags"><span>Python</span><span>Plotly</span><span>Pandas</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card" data-repo="santhosharun99/Womens-Tennis-Stats-since-2007">
+                                        <h3>WTA Tennis ML</h3>
+                                        <p>Analytics platform for WTA rankings (2007-2023) with Selenium scraping and
+                                            predictive Head-to-Head modeling.</p>
+                                        <div class="tags"><span>Selenium</span><span>Pandas</span><span>Streamlit</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card"
+                                        data-repo="santhosharun99/Explaining-molecular-smell-with-deep-learning">
+                                        <h3>Explaining Molecular Smell</h3>
+                                        <p>Multi-modal DL project (GNNs + CNNs) predicting odor from molecular/spectral
+                                            data.</p>
+                                        <div class="tags"><span>TensorFlow</span><span>GNN</span><span>CNN</span></div>
+                                    </div>
+                                    <div class="project-card" data-repo="santhosharun99/IPL-data-visualisation">
+                                        <h3>IPL EDA Visualisation</h3>
+                                        <p>Exploratory Data Analysis over 15 years of IPL data with stadium
+                                            normalization methods.</p>
+                                        <div class="tags"><span>Jupyter</span><span>Pandas</span><span>Matplotlib</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card">
+                                        <h3>IOCL Enterprise Architecture</h3>
+                                        <p>Full-stack solution bridging data systems with robust architecture for Indian
+                                            Oil Corporation.</p>
+                                        <div class="tags"><span>React</span><span>Node.js</span><span>Supabase</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card">
+                                        <h3>Predictive Analysis Literature Review</h3>
+                                        <p>Models of predictive analysis and its applications in manufacturing, finance,
+                                            and the retail sector. Associated with University of Liverpool (Sep 2022 -
+                                            Dec 2022).</p>
+                                        <div class="tags"><span>Predictive Analytics</span><span>Literature
+                                                Review</span><span>Finance</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPACING -->
+                        <div class="spacer-section"></div>
+
+                        <!-- SECTION 2: SPORTS ANALYTICS -->
+                        <div class="section" id="sports-section">
+                            <div class="code-block anim-type-4" style="font-family: var(--font-mono);">
+                                <span class="keyword">await</span> <span
+                                    class="function">load_projects</span>(category=<span
+                                    class="string">"Sports_Analytics"</span>)
+                            </div>
+                            <div class="content-reveal">
+                                <h2 class="section-title">Sports Analytics Projects</h2>
+                                <div class="projects-grid">
+                                    <div class="project-card" data-repo="santhosharun99/cricstat-pro-engine">
+                                        <h3>CricStat Pro Engine</h3>
+                                        <p>Transforms raw ball-by-ball JSON (IPL, T20I, ODI, Test) into actionable match
+                                            insights.</p>
+                                        <div class="tags"><span>Analytics</span><span>PostgreSQL</span></div>
+                                    </div>
+                                    <div class="project-card" data-repo="santhosharun99/The_Oracle_F1_Strategy">
+                                        <h3>The Oracle | F1 Strategy</h3>
+                                        <p>Features a "God-Tier" Physics Engine and Command Center IO for Formula 1
+                                            predictions.</p>
+                                        <div class="tags"><span>Simulation</span><span>Strategy</span></div>
+                                    </div>
+                                    <div class="project-card" data-repo="santhosharun99/Ind_Vs_Nz_ODI_Analytics">
+                                        <h3>IND vs NZ ODI (2023)</h3>
+                                        <p>Deep dive into the 2023 ODI series with Worm graphs and phase analysis.</p>
+                                        <div class="tags"><span>Dashboard</span><span>Plotly</span></div>
+                                    </div>
+                                    <div class="project-card" data-repo="santhosharun99/Womens-Tennis-Stats-since-2007">
+                                        <h3>WTA Head-to-Head Engine</h3>
+                                        <p>Interactive surface-wise performance analysis for women's tennis matchups.
+                                        </p>
+                                        <div class="tags"><span>Scraping</span><span>Stats</span></div>
+                                    </div>
+                                    <div class="project-card" data-repo="santhosharun99/IPL-data-visualisation">
+                                        <h3>IPL Visualisation (08-23)</h3>
+                                        <p>Delivery-level computational analysis and player performance metrics
+                                            formulation.</p>
+                                        <div class="tags"><span>EDA</span><span>Matplotlib</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPACING -->
+                        <div class="spacer-section"></div>
+
+                        <!-- SECTION 3: CHEMISTRY -->
+                        <div class="section" id="chemistry-section">
+                            <div class="code-block anim-type-5" style="font-family: var(--font-mono);">
+                                <span class="keyword">await</span> <span
+                                    class="function">load_projects</span>(category=<span
+                                    class="string">"Computational_Chemistry"</span>)
+                            </div>
+                            <div class="content-reveal">
+                                <h2 class="section-title">Computational Chemistry</h2>
+                                <div class="projects-grid">
+                                    <div class="project-card"
+                                        data-repo="santhosharun99/Explaining-molecular-smell-with-deep-learning">
+                                        <h3>Explaining Molecular Smell</h3>
+                                        <p>MSc Dissertation mapping molecular structures and spectral data to olfactory
+                                            perception using advanced neural network topologies in collaboration with
+                                            the Cooper Group.</p>
+                                        <div class="tags"><span>JAX</span><span>Deep Learning</span><span>GNNs</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card">
+                                        <h3>Antibiotics in Poultry</h3>
+                                        <p>Evaluation of antibiotics in raw meat (Poultry). Associated with Bishop Heber
+                                            College, Tiruchirappalli (Oct 2019 – Dec 2019).</p>
+                                        <div class="tags"><span>Biosciences</span><span>Evaluation</span></div>
+                                    </div>
+                                    <div class="project-card">
+                                        <h3>CF@CSN Nanocomposite</h3>
+                                        <p>A Smart Nanocomposite for Photocatalytic and Electrochemical Applications.
+                                            Associated with Bishop Heber College, Tiruchirappalli (Sep 2019 – Dec 2019).
+                                        </p>
+                                        <div class="tags"><span>Nanomaterials</span><span>Photocatalysis</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPACING -->
+                        <div class="spacer-section"></div>
+
+                        <!-- SECTION: CONTACT -->
+                        <div class="section" id="contact-section">
+                            <div class="code-block anim-type-6" style="font-family: var(--font-mono);">
+                                <span class="keyword">def</span> <span class="function">initiate_contact</span>():<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"email"</span>:
+                                <span class="string">"santhosharunagiri99@gmail.com"</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"phone"</span>:
+                                <span class="string">"+91 8667555900"</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}
+                            </div>
+                            <div class="content-reveal">
+                                <h2 class="section-title">Contact Me</h2>
+                                <div class="project-card"
+                                    style="border-left-color: #00f2ff; cursor: default; margin-top: 20px;">
+                                    <h3 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 20px;"><i
+                                            class="fas fa-address-card" style="color: #00f2ff; margin-right: 10px;"></i>
+                                        Get In Touch</h3>
+
+                                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                                        <div
+                                            style="display: flex; align-items: center; color: var(--text-primary); font-size: 1.1rem;">
+                                            <i class="fas fa-envelope"
+                                                style="color: #00f2ff; width: 30px; font-size: 1.2rem;"></i>
+                                            <a href="mailto:santhosharunagiri99@gmail.com"
+                                                style="color: var(--text-primary); text-decoration: none;">santhosharunagiri99@gmail.com</a>
+                                        </div>
+
+                                        <div
+                                            style="display: flex; align-items: center; color: var(--text-primary); font-size: 1.1rem;">
+                                            <i class="fab fa-linkedin"
+                                                style="color: #0077b5; width: 30px; font-size: 1.2rem;"></i>
+                                            <a href="https://linkedin.com/in/santhosh-arunagiri" target="_blank"
+                                                style="color: var(--text-primary); text-decoration: none;">linkedin.com/in/santhosh-arunagiri</a>
+                                        </div>
+
+                                        <div
+                                            style="display: flex; align-items: center; color: var(--text-primary); font-size: 1.1rem;">
+                                            <i class="fas fa-phone-alt"
+                                                style="color: #f39c12; width: 30px; font-size: 1.2rem;"></i>
+                                            <a href="tel:+918667555900"
+                                                style="color: var(--text-primary); text-decoration: none;">+91
+                                                8667555900</a>
+                                        </div>
+
+                                        <div
+                                            style="display: flex; align-items: flex-start; color: var(--text-primary); font-size: 1.1rem;">
+                                            <i class="fas fa-map-marker-alt"
+                                                style="color: #e74c3c; width: 30px; font-size: 1.2rem; margin-top: 4px;"></i>
+                                            <span style="line-height: 1.5;">1-b, Aani street, Selvanagar
+                                                Extn,<br>Ponnagar, Tiruchirappalli,<br>Tamil Nadu, India 620001</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="tags" style="margin-top: 30px; display: flex; gap: 15px;">
+                                        <a href="mailto:santhosharunagiri99@gmail.com" style="text-decoration: none;">
+                                            <span
+                                                style="background: rgba(0, 242, 255, 0.1); border-color: #00f2ff; color: #00f2ff; cursor: pointer;">
+                                                <i class="fas fa-paper-plane"></i> Send an Email
+                                            </span>
+                                        </a>
+                                        <a href="https://linkedin.com/in/santhosh-arunagiri" target="_blank"
+                                            style="text-decoration: none;">
+                                            <span
+                                                style="background: rgba(0, 119, 181, 0.1); border-color: #0077b5; color: #0077b5; cursor: pointer;">
+                                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer / End Space -->
+                        <div class="spacer-section" style="height: 40vh;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Project Modal Overlay -->
+        <div class="modal-overlay" id="project-modal">
+            <div class="modal-window">
+                <div class="modal-header">
+                    <div class="modal-title"><i class="fab fa-github"></i> <span id="modal-repo-name">Repository</span>
+                    </div>
+                    <div class="modal-actions">
+                        <a id="modal-repo-url" href="#" target="_blank" class="github-btn"><i
+                                class="fas fa-external-link-alt"></i> View on GitHub</a>
+                        <div class="modal-close" id="modal-close-btn">&times;</div>
+                    </div>
+                </div>
+                <div class="modal-stats">
+                    <span><i class="fas fa-star" style="color:#f1e05a;"></i> <span id="modal-stars">0</span>
+                        Stars</span>
+                    <span><i class="fas fa-code-branch" style="color:#8b949e;"></i> <span id="modal-forks">0</span>
+                        Forks</span>
+                    <span id="modal-lang" class="lang-badge">Language</span>
+                </div>
+                <div class="modal-body markdown-body" id="modal-readme-content">
+                    <!-- Rendered Markdown goes here -->
+                    <div class="loader"><i class="fas fa-spinner fa-spin"></i> Fetching GitHub data...</div>
+                </div>
             </div>
         </div>
-        <div class="hero-visual">
-            <!-- decorative elements -->
-            <div class="stat-card float-1">
-                <div class="stat-icon"><i class="fas fa-database"></i></div>
-                <div class="stat-info">
-                    <span class="stat-value">7M+</span>
-                    <span class="stat-label">Data Points Processed</span>
-                </div>
-            </div>
-            <div class="stat-card float-2">
-                <div class="stat-icon"><i class="fas fa-baseball-ball"></i></div>
-                <div class="stat-info">
-                    <span class="stat-value">ECB</span>
-                    <span class="stat-label">Reg. Player</span>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <section id="about" class="about-section">
-        <div class="section-header">
-            <h2>The <span class="accent">Player-Analyst</span> Hybrid</h2>
-            <p>From playing in the Cheshire Lines CC to modeling molecular smells with Deep Learning.</p>
-        </div>
-
-        <div class="bento-grid">
-            <div class="bento-card bio-card">
-                <h3>Bio</h3>
-                <p>Data Scientist with an MSc (Distinction) from the University of Liverpool. I combine rigorous
-                    scientific methodology with practical sports domain knowledge. Uniquely positioned to translate
-                    complex analytics for coaches and players.</p>
-            </div>
-            <div class="bento-card education-card">
-                <h3>Education</h3>
-                <div class="edu-item">
-                    <span class="year">2023</span>
-                    <h4>MSc Data Science & AI</h4>
-                    <p>University of Liverpool (Distinction)</p>
-                </div>
-                <!-- Added based on user context -->
-                <div class="edu-item">
-                    <span class="year">2020</span>
-                    <h4>BSc Chemistry</h4>
-                    <p>Bharathidasan University</p>
-                </div>
-            </div>
-            <div class="bento-card sports-card">
-                <h3>On The Field</h3>
-                <ul class="sports-list">
-                    <li><i class="fas fa-trophy"></i> District Amateur Cricket League Winner</li>
-                    <li><i class="fas fa-user-check"></i> ECB Registered Player</li>
-                    <li><i class="fas fa-certificate"></i> <a href="assets/pfsa_level2.pdf" target="_blank"
-                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--accent);">PFSA
-                            Level 2 Performance Analysis (Football)</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-        <div class="section-header">
-            <h2>Featured <span class="accent">Work</span></h2>
-        </div>
-
-        <!-- Featured Project 1: CricStat Pro -->
-        <article class="project-card featured">
-            <div class="project-content">
-                <div class="project-label">Flagship Project</div>
-                <h3>CricStat Pro | Sports Analytics Engine</h3>
-                <p class="project-summary">A high-performance analytics platform processing over 7 million data points.
-                    Transforms raw ball-by-ball JSON (IPL, T20I, ODI, Test) into actionable insights with a custom neon
-                    UI.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>PostgreSQL</span>
-                    <span>SQLAlchemy</span>
-                    <span>CSS3</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://cricstat-pro-engine-santhosharun99.streamlit.app/" target="_blank"
-                        class="btn-link">View Analysis <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://github.com/santhosharun99" class="btn-link"><i class="fab fa-github"></i> Code</a>
-                </div>
-            </div>
-            <div class="project-visual neon-border">
-                <!-- Visual placeholder would go here -->
-                <div class="visual-placeholder">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Win Probability: 87%</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Featured Project 2: The Oracle -->
-        <article class="project-card featured" style="margin-top: 3rem;">
-            <div class="project-content">
-                <div class="project-label" style="background: #00f2ff; color: #000;">Latest Release</div>
-                <h3>The Oracle | F1 Strategy Engine</h3>
-                <p class="project-summary">Bayesian Race Strategy Optimization Engine. Ingests real-time telemetry to
-                    predict winning pit strategies using Monte Carlo simulations. Features a "God-Tier" Physics Engine
-                    and Cyberpunk Command Center IO.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Streamlit</span>
-                    <span>XGBoost</span>
-                    <span>Monte Carlo</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://the-oracle-f1-strategy.streamlit.app" target="_blank" class="btn-link">Launch
-                        Command Center <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://github.com/santhosharun99/The_Oracle_F1_Strategy" target="_blank"
-                        class="btn-link"><i class="fab fa-github"></i> Code</a>
-                </div>
-            </div>
-            <div class="project-visual neon-border"
-                style="border-color: #00f2ff; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);">
-                <div class="visual-placeholder" style="background: radial-gradient(circle at center, #050510, #000);">
-                    <i class="fas fa-flag-checkered" style="font-size: 3rem; color: #00f2ff; margin-bottom: 1rem;"></i>
-                    <span style="font-family: 'Courier New', monospace; color: #fff;">RECOMMENDATION: <span
-                            style="color: #00f2ff;">BOX LAP 16</span></span>
-                </div>
-            </div>
-        </article>
-
-        <div class="projects-grid">
-            <!-- Project 1: IND vs NZ Dashboard (New) -->
-            <article class="project-card compact">
-                <div class="card-icon"><i class="fas fa-chart-area"></i></div>
-                <h3>IND vs NZ ODI Analytics</h3>
-                <p>Interactive dashboard for the 2023 ODI series. Features realistic pitch maps, granular matchup
-                    analysis (Hotspots), and Phase/Worm graphs.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Streamlit</span>
-                    <span>Plotly</span>
-                    <span>Pandas</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a href="https://indvsnzodi2026analytics.streamlit.app/" target="_blank"
-                        style="color: var(--accent); text-decoration: none; font-size: 0.9rem; margin-right: 15px;"><i
-                            class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="https://github.com/santhosharun99/Ind_Vs_Nz_ODI_Analytics" target="_blank"
-                        style="color: var(--accent); text-decoration: none; font-size: 0.9rem;"><i
-                            class="fab fa-github"></i> View Source</a>
-                </div>
-            </article>
-            <!-- Project 2 -->
-            <article class="project-card compact">
-                <div class="card-icon"><i class="fas fa-table-tennis"></i></div>
-                <h3>WTA Tennis Stats & H2H Engine</h3>
-                <p>Comprehensive analytics platform for WTA rankings (2007-2023). Features Selenium-based ranking
-                    scraping, surface-wise performance analysis, and interactive Head-to-Head comparisons via Streamlit.
-                </p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Selenium</span>
-                    <span>Streamlit</span>
-                    <span>Pandas</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a href="https://github.com/santhosharun99/Womens-Tennis-Stats-since-2007" target="_blank"
-                        style="color: var(--accent); text-decoration: none; font-size: 0.9rem;"><i
-                            class="fab fa-github"></i> View Source</a>
-                </div>
-            </article>
-
-            <!-- Project 3: IPL Data Viz -->
-            <article class="project-card compact">
-                <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
-                <h3>IPL Data Visualisation (2008-2023)</h3>
-                <p>Exploratory Data Analysis (EDA) and visualization of 15 years of IPL data. Includes delivery-level
-                    analysis, stadium normalization, and player performance metrics using Jupyter Notebooks.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Jupyter</span>
-                    <span>Pandas</span>
-                    <span>Matplotlib</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a href="https://github.com/santhosharun99/IPL-data-visualisation" target="_blank"
-                        style="color: var(--accent); text-decoration: none; font-size: 0.9rem;"><i
-                            class="fab fa-github"></i> View Source</a>
-                </div>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="project-card compact">
-                <div class="card-icon"><i class="fas fa-atom"></i></div>
-                <h3>Explaining Molecular Smell (MSc Dissertation)</h3>
-                <p>Multi-modal Deep Learning project (GNNs + CNNs) for odor prediction from molecular & spectral data.
-                    Collaboration with <strong>Cooper Group (Materials Innovation Factory)</strong> at University of
-                    Liverpool.</p>
-                <div class="tech-stack">
-                    <span>TensorFlow</span>
-                    <span>JAX</span>
-                    <span>GNNs</span>
-                    <span>CNNs</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a href="https://github.com/santhosharun99/Explaining-molecular-smell-with-deep-learning"
-                        target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.9rem;"><i
-                            class="fab fa-github"></i> View Source</a>
-                </div>
-            </article>
-
-            <!-- Project 4: Enterprise -->
-            <article class="project-card compact">
-                <div class="card-icon">
-                    <i class="fas fa-industry"></i>
-                    <img src="assets/indian_oil.gif" alt="Indian Oil"
-                        style="height: 24px; vertical-align: middle; margin-left: 10px; border-radius: 4px; background-color: white; padding: 2px;">
-                </div>
-                <h3>IOCL Enterprise NFR System</h3>
-                <p>Full-stack solution for Indian Oil Corporation to digitize non-fuel revenue sales. Bridges Area
-                    Offices with field staff.</p>
-                <div class="tech-stack">
-                    <span>React.js</span>
-                    <span>Node.js</span>
-                    <span>Supabase</span>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section id="skills" class="skills-section">
-        <div class="skill-category">
-            <h3><i class="fas fa-code"></i> Tech Stack</h3>
-            <div class="skill-tags">
-                <span>Python</span>
-                <span>SQL (Postgres)</span>
-                <span>React.js</span>
-                <span>PyTorch</span>
-                <span>Pandas</span>
-                <span>Git</span>
-                <span>Docker</span>
-            </div>
-        </div>
-        <div class="skill-category">
-            <h3><i class="fas fa-brain"></i> Domain Expertise</h3>
-            <div class="skill-tags">
-                <span>Cricket Strategy</span>
-                <span>Performance Analysis</span>
-                <span>Computer Vision</span>
-                <span>Predictive Modeling</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h2>Ready to draft a <span class="accent">game changer?</span></h2>
-            <p>I am currently based in India and open to Performance Analyst and Data Scientist roles.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/santhosh-arunagiri/" class="social-btn"><i
-                        class="fab fa-linkedin-in"></i> LinkedIn</a>
-                <a href="https://github.com/santhosharun99" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
-                <a href="mailto:santhosharunagiri99@gmail.com" class="social-btn"><i class="fas fa-envelope"></i>
-                    Email</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Santhosh Arunagiri. Built with <i class="fas fa-heart accent"></i> & Code.</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
